@@ -1,16 +1,17 @@
 <?php
 
 if (isset($_POST["submit"])) {
-    
-    $userEmail = $_POST["uname"];
-    $userPwd   = $_POST["psw"];
 
-    require_once 'dbh.inc.php';
+    $email = $_POST["uname"];
+    $pwd = $_POST["psw"];
+
+    require_once "dbh.inc.php";
     require_once 'functions.inc.php';
 
-    loginUser($conn, $userEmail, $userPwd);
+    loginUser($conn, $email, $pwd);
 }
+
 else {
-    header("location: ../index.php");
+    header("location: ../index.php?error=notaccess");
     exit();
 }

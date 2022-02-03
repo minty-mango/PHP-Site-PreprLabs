@@ -6,7 +6,9 @@
         <div class="login-container">
             <h1>Food Centre</h1>
             <h2>Daily sales, coupons, and news about food worldwide here.</h2>
-            <h1> Welcome </h1>
+            <?php
+                echo "<h1> Welcome ", $_SESSION["userEmail"], "</h1>";
+            ?>
         </div>
     </div>
 <?php

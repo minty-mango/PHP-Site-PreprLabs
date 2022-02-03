@@ -7,7 +7,7 @@
             <h1>Food Centre</h1>
             <h2>Daily sales, coupons, and news about food worldwide here.</h2>
 
-            <form action='/includes/login.inc.php' method='post'>
+            <form action='includes/login.inc.php' method='post'>
                 <div class="form-container">
                     <input id="username" type="text" placeholder="Enter Username" name="uname" required>
                     <br>
@@ -15,7 +15,7 @@
                     <br>
                     <label> <input id='remember' type="checkbox" checked="checked" name="remember"> Remember me </label>
                     <br>
-                    <button id="submit-button" type="submit">Login</button>
+                    <button id="submit-button" name='submit' type="submit">Login</button>
                   </div>    
             </form>
             <br>
@@ -23,12 +23,12 @@
             <a href="signup.php">Sign up?</a>
         </div>
     </div>
-<?php
-if (isset($_GET["error"])) {
-    if($_GET["error"] == "wronglogin") {
-        echo "<script> alert(\"Incorrect Login Information\") </script>";
+<?php 
+    if (isset($_GET["error"])) {
+        if ($_GET["error"] == "wronglogin") {
+            echo "<script> alert(\"Login information was wrong.\") </script>";
+        }
     }
-}
 ?>
 <?php
     include_once 'footer.php';

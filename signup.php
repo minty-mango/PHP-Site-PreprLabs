@@ -11,7 +11,7 @@
                     <input id="first-name" type="text" placeholder="First name" name="fname" required>
                     <input id="last-name" type="text" placeholder="Last Name" name="lname" required>
                     <br>
-                    <input id="email" type="email" placeholder="Email Address" name="address" required>
+                    <input id="email" type="email" placeholder="Email Address" name="email" required>
                     <br>
                     <input id="password" type="password" placeholder="Enter Password" name="pwd" required>
                     <br>
@@ -23,20 +23,20 @@
             <br>
         </div>
     </div>
-<?php
+
+<?php 
     if (isset($_GET["error"])) {
-        if($_GET["error"] == "passworddontmatch") {
-            echo "<script> alert(\"Passwords do not match \") </script>";
+        if ($_GET["error"] == "passwordnotmatch") {
+            echo "<script> alert(\"Passwords do not match.\") </script>";
         }
-        else if($_GET["error"] == "emailhasbeentaken") {
-            echo "<script> alert(\"Email Exists!\") </script>";
+        else if ($_GET["error"] == "emailtaken") {
+            echo "<script> alert(\"Email is already registered. \") </script>";
         }
-        else if($_GET["error"] = "none") {
-            echo "<script> alert(\"You have signed up\") </script>";
+        else if ($_GET["error"] == "none") {
+            echo "<script> alert(\"You successfully signed up. \") </script>";
         }
     }
 ?>
-
 <?php
     include_once 'footer.php';
 ?>
